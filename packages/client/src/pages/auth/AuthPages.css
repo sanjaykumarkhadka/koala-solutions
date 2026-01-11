@@ -152,6 +152,20 @@
   margin: var(--space-6) 0;
 }
 
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-gray-200);
+}
+
+.auth-divider span {
+  padding: 0 var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+}
+
 .auth-divider-line {
   flex: 1;
   height: 1px;
@@ -162,6 +176,11 @@
   padding: 0 var(--space-4);
   font-size: var(--text-sm);
   color: var(--color-gray-500);
+}
+
+/* Demo Button */
+.auth-demo-btn {
+  width: 100%;
 }
 
 /* Social Buttons */

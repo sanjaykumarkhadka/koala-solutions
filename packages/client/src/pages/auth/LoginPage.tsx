@@ -14,7 +14,7 @@ interface TenantOption {
 }
 
 export function LoginPage() {
-  const { login, getTenantsForEmail } = useAuth();
+  const { login, loginDemo, getTenantsForEmail } = useAuth();
   const { error: showError } = useToast();
 
   const [email, setEmail] = useState('');
@@ -157,6 +157,20 @@ export function LoginPage() {
             className="auth-submit"
           >
             Sign in
+          </Button>
+
+          <div className="auth-divider">
+            <span>or</span>
+          </div>
+
+          <Button
+            type="button"
+            variant="secondary"
+            size="lg"
+            onClick={loginDemo}
+            className="auth-demo-btn"
+          >
+            Try Demo Mode
           </Button>
         </form>
 

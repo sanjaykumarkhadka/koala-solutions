@@ -49,3 +49,5 @@ temp/
 
 # Windows artifacts
 nul
+
+.vercel

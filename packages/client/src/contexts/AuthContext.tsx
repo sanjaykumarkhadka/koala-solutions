@@ -1,6 +1,15 @@
 import { createContext, useState, useEffect, useCallback, ReactNode } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { api, getErrorMessage } from '@/services/api';
+import {
+  isDemoMode,
+  enableDemoMode,
+  disableDemoMode,
+  demoUsers,
+  demoTenant,
+  DEMO_ACCESS_TOKEN,
+  DEMO_REFRESH_TOKEN,
+} from '@/services/demo';
 
 // Types
 export interface User {
@@ -47,7 +56,9 @@ export interface AuthContextValue {
   tenant: Tenant | null;
   isLoading: boolean;
   isAuthenticated: boolean;
+  isDemo: boolean;
   login: (credentials: LoginInput) => Promise<void>;
+  loginDemo: () => void;
   register: (data: RegisterInput) => Promise<void>;
   logout: () => void;
   fetchUser: () => Promise<void>;
@@ -62,6 +73,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [tenant, setTenant] = useState<Tenant | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isDemo, setIsDemo] = useState(isDemoMode());
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -129,6 +141,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     [navigate, location.state]
   );
 
+  // Demo Login
+  const loginDemo = useCallback(() => {
+    enableDemoMode();
+    setIsDemo(true);
+
+    localStorage.setItem('accessToken', DEMO_ACCESS_TOKEN);
+    localStorage.setItem('refreshToken', DEMO_REFRESH_TOKEN);
+
+    setUser(demoUsers.admin as User);
+    setTenant(demoTenant as Tenant);
+
+    // Redirect to demo dashboard
+    navigate(`/t/${demoTenant.slug}/dashboard`);
+  }, [navigate]);
+
   // Register
   const register = useCallback(
     async (data: RegisterInput) => {
@@ -156,6 +183,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const logout = useCallback(() => {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('refreshToken');
+    disableDemoMode();
+    setIsDemo(false);
     setUser(null);
     setTenant(null);
     navigate('/login');
@@ -168,7 +197,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         tenant,
         isLoading,
         isAuthenticated,
+        isDemo,
         login,
+        loginDemo,
         register,
         logout,
         fetchUser,
