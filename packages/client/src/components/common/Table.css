@@ -1,0 +1,98 @@
+/* Table Component Styles */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+/* Header */
+.table-header {
+  background-color: var(--color-gray-50);
+}
+
+.table-head {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  font-weight: 500;
+  color: var(--color-gray-600);
+  border-bottom: 1px solid var(--color-gray-200);
+  white-space: nowrap;
+}
+
+.table-head-sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.table-head-sortable:hover {
+  color: var(--color-gray-900);
+  background-color: var(--color-gray-100);
+}
+
+.table-head-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.table-sort-icon {
+  display: flex;
+  align-items: center;
+  color: var(--color-gray-400);
+}
+
+.table-sort-icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.sort-icon-inactive {
+  opacity: 0.5;
+}
+
+/* Body */
+.table-body {
+  background-color: white;
+}
+
+.table-row {
+  border-bottom: 1px solid var(--color-gray-100);
+  transition: background-color var(--transition-fast);
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row:hover {
+  background-color: var(--color-gray-50);
+}
+
+.table-row-clickable {
+  cursor: pointer;
+}
+
+.table-row-clickable:hover {
+  background-color: var(--color-primary-50);
+}
+
+.table-cell {
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-gray-900);
+  vertical-align: middle;
+}
+
+/* Empty state in table */
+.table-empty {
+  padding: var(--space-12) var(--space-4);
+  text-align: center;
+  color: var(--color-gray-500);
+}

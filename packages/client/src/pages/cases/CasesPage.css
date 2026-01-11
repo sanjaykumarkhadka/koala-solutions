@@ -1,0 +1,160 @@
+/* Cases Page Styles */
+
+.cases-page {
+  max-width: 1200px;
+}
+
+/* Stats Grid */
+.cases-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.stat-card {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-1);
+}
+
+.stat-label {
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+}
+
+/* Filters */
+.cases-filters {
+  margin-bottom: var(--space-4);
+}
+
+.filters-row {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.filter-search {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-select {
+  min-width: 160px;
+}
+
+/* Loading */
+.cases-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16);
+}
+
+/* Case cells */
+.case-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-primary-600);
+}
+
+.case-applicant {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.applicant-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.applicant-name {
+  font-weight: 500;
+  color: var(--color-gray-900);
+}
+
+.applicant-email {
+  font-size: var(--text-xs);
+  color: var(--color-gray-500);
+}
+
+.visa-type {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+}
+
+.case-assigned {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.case-unassigned {
+  font-size: var(--text-sm);
+  color: var(--color-gray-400);
+  font-style: italic;
+}
+
+.document-count {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+}
+
+/* Pagination */
+.cases-pagination {
+  padding: var(--space-4);
+  border-top: 1px solid var(--color-gray-100);
+}
+
+/* Create Case Form */
+.create-case-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.create-case-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cases-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filters-row {
+    flex-direction: column;
+  }
+
+  .filter-search,
+  .filter-select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .cases-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .create-case-form .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .case-applicant {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+}

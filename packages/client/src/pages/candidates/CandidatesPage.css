@@ -1,0 +1,128 @@
+/* Candidates Page Styles */
+
+.candidates-page {
+  max-width: 1200px;
+}
+
+/* Stats Grid */
+.candidates-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.stat-card {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-1);
+}
+
+.stat-label {
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+}
+
+/* Filters */
+.candidates-filters {
+  margin-bottom: var(--space-4);
+}
+
+.filters-row {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.filter-search {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-select {
+  min-width: 150px;
+}
+
+/* Loading */
+.candidates-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16);
+}
+
+/* Candidate cells */
+.candidate-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.candidate-info > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.candidate-name {
+  font-weight: 500;
+  color: var(--color-gray-900);
+}
+
+.candidate-email {
+  font-size: var(--text-xs);
+  color: var(--color-gray-500);
+}
+
+.candidate-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.more-skills {
+  font-size: var(--text-xs);
+  color: var(--color-gray-500);
+  padding: var(--space-1) var(--space-2);
+}
+
+.candidate-experience {
+  font-size: var(--text-sm);
+  color: var(--color-gray-700);
+}
+
+.candidate-location {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+}
+
+.application-count {
+  font-weight: 500;
+  color: var(--color-gray-700);
+}
+
+/* Pagination */
+.candidates-pagination {
+  padding: var(--space-4);
+  border-top: 1px solid var(--color-gray-100);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .candidates-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .filters-row {
+    flex-direction: column;
+  }
+
+  .filter-search,
+  .filter-select {
+    width: 100%;
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "koala-migration-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multi-tenant SaaS platform for migration agencies",
+  "scripts": {
+    "dev": "pnpm run --parallel dev",
+    "dev:server": "pnpm --filter server dev",
+    "dev:client": "pnpm --filter client dev",
+    "build": "pnpm run --parallel build",
+    "build:server": "pnpm --filter server build",
+    "build:client": "pnpm --filter client build",
+    "test": "pnpm run --parallel test",
+    "test:server": "pnpm --filter server test",
+    "test:client": "pnpm --filter client test",
+    "lint": "pnpm run --parallel lint",
+    "clean": "pnpm run --parallel clean",
+    "db:migrate": "pnpm --filter server prisma migrate dev",
+    "db:seed": "pnpm --filter server prisma db seed",
+    "db:studio": "pnpm --filter server prisma studio"
+  },
+  "keywords": [
+    "saas",
+    "migration",
+    "multi-tenant",
+    "visa",
+    "recruitment"
+  ],
+  "author": "",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

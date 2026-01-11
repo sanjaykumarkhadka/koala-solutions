@@ -1,0 +1,67 @@
+/* Pagination Component Styles */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+}
+
+.pagination-info {
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.pagination-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-gray-600);
+  background: none;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pagination-page:hover {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-900);
+}
+
+.pagination-page.active {
+  background-color: var(--color-primary-500);
+  color: white;
+}
+
+.pagination-page.active:hover {
+  background-color: var(--color-primary-600);
+}
+
+.pagination-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  font-size: var(--text-sm);
+  color: var(--color-gray-400);
+}

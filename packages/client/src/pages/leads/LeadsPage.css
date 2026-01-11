@@ -1,0 +1,92 @@
+/* Leads Page Styles */
+
+.leads-page {
+  max-width: 1200px;
+}
+
+/* Filters */
+.leads-filters {
+  margin-bottom: var(--space-4);
+}
+
+.filters-row {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.filter-search {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-select {
+  min-width: 150px;
+}
+
+/* Loading */
+.leads-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16);
+}
+
+/* Lead cells */
+.lead-name {
+  font-weight: 500;
+  color: var(--color-gray-900);
+}
+
+.lead-source {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+  text-transform: capitalize;
+}
+
+.lead-assigned {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.lead-unassigned {
+  font-size: var(--text-sm);
+  color: var(--color-gray-400);
+  font-style: italic;
+}
+
+/* Pagination */
+.leads-pagination {
+  padding: var(--space-4);
+  border-top: 1px solid var(--color-gray-100);
+}
+
+/* Create Lead Form */
+.create-lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.create-lead-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .filters-row {
+    flex-direction: column;
+  }
+
+  .filter-search,
+  .filter-select {
+    width: 100%;
+  }
+
+  .create-lead-form .form-row {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,156 @@
+/* Jobs Page Styles */
+
+.jobs-page {
+  max-width: 1200px;
+}
+
+/* Stats Grid */
+.jobs-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.stat-card {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-1);
+}
+
+.stat-label {
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+}
+
+/* Filters */
+.jobs-filters {
+  margin-bottom: var(--space-4);
+}
+
+.filters-row {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.filter-search {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-select {
+  min-width: 150px;
+}
+
+/* Loading */
+.jobs-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16);
+}
+
+/* Job cells */
+.job-title-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.job-title {
+  font-weight: 500;
+  color: var(--color-gray-900);
+}
+
+.job-company {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.job-location {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+}
+
+.job-type {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+}
+
+.application-count {
+  font-weight: 500;
+  color: var(--color-gray-700);
+}
+
+/* Pagination */
+.jobs-pagination {
+  padding: var(--space-4);
+  border-top: 1px solid var(--color-gray-100);
+}
+
+/* Create Job Form */
+.create-job-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.create-job-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.form-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  color: var(--color-gray-700);
+}
+
+.form-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary-500);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .jobs-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filters-row {
+    flex-direction: column;
+  }
+
+  .filter-search,
+  .filter-select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .jobs-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .create-job-form .form-row {
+    grid-template-columns: 1fr;
+  }
+}

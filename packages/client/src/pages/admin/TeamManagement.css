@@ -1,0 +1,53 @@
+/* Team Management Styles */
+
+.team-management {
+  max-width: 1200px;
+}
+
+.team-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16);
+}
+
+/* Member Info */
+.member-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.member-info > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-name {
+  font-weight: 500;
+  color: var(--color-gray-900);
+}
+
+.member-email {
+  font-size: var(--text-xs);
+  color: var(--color-gray-500);
+}
+
+/* Invite Form */
+.invite-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.invite-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .invite-form .form-row {
+    grid-template-columns: 1fr;
+  }
+}
