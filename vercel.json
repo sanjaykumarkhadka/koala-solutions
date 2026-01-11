@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm --filter @koala/shared build && pnpm --filter @koala/client build",
+  "buildCommand": "pnpm --filter shared build && pnpm --filter client build",
   "outputDirectory": "packages/client/dist",
   "installCommand": "pnpm install",
   "framework": "vite",
