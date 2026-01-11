@@ -8,6 +8,7 @@ import {
   demoCompanies,
   demoJobs,
   demoCandidates,
+  demoTeam,
   demoDashboardStats,
   DEMO_ACCESS_TOKEN,
   DEMO_REFRESH_TOKEN,
@@ -206,15 +207,7 @@ function getDemoResponse(url: string, method: string, requestData?: string): unk
     if (url.includes('/team') || url.includes('/users')) {
       return {
         status: 'success',
-        data: Object.values(demoUsers),
-        meta: {
-          total: Object.values(demoUsers).length,
-          page: 1,
-          limit: 10,
-          totalPages: 1,
-          hasNextPage: false,
-          hasPreviousPage: false,
-        },
+        data: demoTeam,
       };
     }
   }
