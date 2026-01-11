@@ -92,12 +92,14 @@ function getDemoResponse(url: string, method: string, requestData?: string): unk
       }
       return {
         status: 'success',
-        data: {
-          items: demoLeads,
+        data: demoLeads,
+        meta: {
           total: demoLeads.length,
           page: 1,
           limit: 10,
           totalPages: 1,
+          hasNextPage: false,
+          hasPreviousPage: false,
         },
       };
     }
@@ -124,12 +126,14 @@ function getDemoResponse(url: string, method: string, requestData?: string): unk
       }
       return {
         status: 'success',
-        data: {
-          items: demoCases,
+        data: demoCases,
+        meta: {
           total: demoCases.length,
           page: 1,
           limit: 10,
           totalPages: 1,
+          hasNextPage: false,
+          hasPreviousPage: false,
         },
       };
     }
@@ -140,12 +144,14 @@ function getDemoResponse(url: string, method: string, requestData?: string): unk
     if (method === 'get') {
       return {
         status: 'success',
-        data: {
-          items: demoCompanies,
+        data: demoCompanies,
+        meta: {
           total: demoCompanies.length,
           page: 1,
           limit: 10,
           totalPages: 1,
+          hasNextPage: false,
+          hasPreviousPage: false,
         },
       };
     }
@@ -156,12 +162,14 @@ function getDemoResponse(url: string, method: string, requestData?: string): unk
     if (method === 'get') {
       return {
         status: 'success',
-        data: {
-          items: demoJobs,
+        data: demoJobs,
+        meta: {
           total: demoJobs.length,
           page: 1,
           limit: 10,
           totalPages: 1,
+          hasNextPage: false,
+          hasPreviousPage: false,
         },
       };
     }
@@ -172,12 +180,14 @@ function getDemoResponse(url: string, method: string, requestData?: string): unk
     if (method === 'get') {
       return {
         status: 'success',
-        data: {
-          items: demoCandidates,
+        data: demoCandidates,
+        meta: {
           total: demoCandidates.length,
           page: 1,
           limit: 10,
           totalPages: 1,
+          hasNextPage: false,
+          hasPreviousPage: false,
         },
       };
     }
@@ -196,12 +206,14 @@ function getDemoResponse(url: string, method: string, requestData?: string): unk
     if (url.includes('/team') || url.includes('/users')) {
       return {
         status: 'success',
-        data: {
-          items: Object.values(demoUsers),
+        data: Object.values(demoUsers),
+        meta: {
           total: Object.values(demoUsers).length,
           page: 1,
           limit: 10,
           totalPages: 1,
+          hasNextPage: false,
+          hasPreviousPage: false,
         },
       };
     }
